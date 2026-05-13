@@ -94,3 +94,101 @@
 #     if i == " ":
 #         word_count = word_count + 1
 # print(f"Number of words: {word_count + 1}")#add 1 to the word count to account for the last word
+
+
+# Bodmas Rule
+
+
+
+# # check how many Special characters are there in the string
+# S= "hb9#n8@kdilhdDDn%7(@nebvuwdesi*@)"
+# #check how many Special characters are there in the string
+# count = 0
+# z =ord(S[0])#ord() function returns the ASCII value of the character
+# print(z)
+
+# if (z >= 32 and z <= 47) or (z >= 58 and z <= 64) or (z >= 91 and z <= 96) or (z >= 123 and z <= 126):
+#     count = count + 1
+
+
+# titel case Sentance
+# S= "the quick brown fox jumps over the lazy dog"
+# new_S = ""
+# for i in S: 
+#     if i == " ":
+#         new_S = new_S + " "
+#     else:
+#         new_S = new_S + i.title()
+# print(new_S)
+
+# # check a string is Alphanumeric or not(true or false)
+# print("Ankjkush1njovnio95i-94no23ew".isalnum())#check if the string contains only alphanumeric characters (letters and numbers)
+# print("ankushpardhi".isalpha())#check if the string contains only alphabetic characters (letters)
+# print("1234567890f".isdigit())#check if the string contains only digits
+# print(" ".isspace())#check if the string contains only whitespace characters (spaces, tabs, etc.)
+# print("Ankush".isupper())#check if the string contains only uppercase characters (letters)
+# print("Ankush".islower())#check if the string contains only lowercase characters (letters)
+# print(" ".istitle())#check if the string is in title case (first letter of each word is uppercase and the rest are lowercase)
+# print(" ".isspace())#check if the string contains only whitespace characters (spaces, tabs, etc.)
+# print("Ankush".isprintable())#check if the string contains only printable characters (letters, numbers, punctuation, etc.)
+
+# print("Ankushpardhi".find("k"))#find the index of the first occurrence of the specified substring
+# print("Ankush".index("k"))#find the index of the first occurrence of the specified substring and raise an error if the substring is not found
+# print("Ankush".count("k"))#count the number of occurrences of the specified substring
+
+
+#  pattern printing question
+i = 1 
+j = 1
+
+# for i in range(1, 4):
+#     for j in range(1, 4):
+#         print(i, end=" ")#print the value of i and end with a space instead of a new line
+#     print()
+
+# for i in range(1, 4):
+#     for j in range(1, 4):
+#         print(j, end=" ")#print the value of j and end with a space instead of a new line
+#     print()
+
+# for i in range(1, 4):
+#     for j in range(1, 4):
+#         print(i+j, end=" ")#print the sum of i and j and end with a space instead of a new line
+#     print()
+
+# write a program to print the following pattern
+# A A A
+# B B B
+# C C C
+# n = int(input("Enter the number of rows: "))
+# for i in range(1, n+1):
+#     for j in range(1, n+1):
+#         print(chr(64+i), end=" ")#print the value of j and end with a space instead of a new line
+#     print()
+
+# n = int(input("Enter the number of rows: "))
+# for i in range(1, n+1):
+#     for j in range(1, 1+i):
+#         print("*", end=" ")
+#     print()
+
+# n = int(input("Enter the number of rows: "))
+# for i in range(1, n+1):
+#     for j in range(1, n+2-i):
+#         print(chr(64+j), end=" ")#print the value of j and end with a space instead of a new line
+#     print()
+
+# import time
+# n = int(input("Enter the number of rows: "))
+# for i in range(1, n+1):
+#     print(" "*(n-i), end=" ")
+#     for j in range(1, i+1):
+#         time.sleep(1)#add a delay of 0.5 seconds between each print statement
+#         print("*", end=" ")
+#     print()
+
+# n = [1, 2, 3, 4, 5]
+
+# prod = 1
+
+# for i in a:
