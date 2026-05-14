@@ -78,7 +78,14 @@
 # cityName("Mumbai","nagpur","Delhi") #calling the function with default arguments
 
 
-#modularity approach in function
+#modularity approach in function 
+# menu driven program for arithmatic operations
+# why we use menu driven program?
+# A menu-driven program is a type of program that provides a user interface with a list of
+# ptions or choices for the user to select from. It allows users to interact with the program by 
+# choosing from a predefined set of actions, making it easier
+
+import sys
 def add():
     a=int(input("Enter the first number: "))
     b=int(input("Enter the second number: "))
@@ -115,7 +122,4 @@ while True:
     elif choice == 4:
         mul()
     elif choice == 5:
-        break
-    else:
-        print("Invalid choice")
-    
+        sys.exit()
