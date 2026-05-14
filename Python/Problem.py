@@ -193,3 +193,53 @@ j = 1
 
 # for i in a:
 
+#removing spaces from a string
+#1.rstrip() method removes the leading spaces from a string
+#2.lstrip() method removes the trailing spaces from a string
+#3.strip() method removes both leading and trailing spaces from a string
+
+# city = input ("Enter the name of the city: ")
+# scity = city.strip()#split the city name into a list of words
+# if scity == 'hyderabad':
+#     print("Hyderabad is the capital of Telangana")
+# elif scity == 'mumbai':
+#     print("Mumbai is the capital of Maharashtra")
+# elif scity == 'delhi':
+#     print("Delhi is the capital of India")
+# else:
+#     print("City not found")
+
+# # compare the triplets
+# a= [5, 6, 7]
+# b= [3, 6, 10]   
+
+# def compareTriplets(a, b):
+#     alice_score=0
+#     bob_score=0
+#     for alice_val, bob_val in zip(a, b):#zip() function is used to iterate over two or more 
+#         #iterables (lists, tuples, etc.) in parallel, returning a tuple of the corresponding elements from each 
+#         # iterable at each iteration.
+#         if alice_val > bob_val:
+#             alice_score += 1
+#         elif alice_val < bob_val:
+#             bob_score += 1
+            
+#     return [alice_score, bob_score]
+# result = compareTriplets(a, b)
+# print(result)
+
+s = "07:05:45PM"
+
+def timeConversion(s):
+    # Get AM/PM
+    period = s[-2:]
+    # Get hours
+    hour = int(s[:2])
+    
+    if period == "PM" and hour != 12:
+        hour += 12
+    elif period == "AM" and hour == 12:
+        hour = 0
+        
+    # Format hour to 2 digits and append the rest of the string (minutes:seconds)
+    return "{:02d}".format(hour) + s[2:-2]
