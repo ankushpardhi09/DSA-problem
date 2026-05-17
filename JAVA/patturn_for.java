@@ -29,31 +29,31 @@ public class patturn_for {
         System.out.println("\n========== PATTERN 3: RIGHT TRIANGLE (DESCENDING) ==========");
         // Print right triangle with decreasing stars
         for (int i = N; i >= 1; i--) {
-            for (int j = 1; j <= i; j++) {
+            for (int j = 1; j <= i; j++) { 
                 System.out.print("* ");
             }
             System.out.println();
         }
 
         System.out.println("\n========== PATTERN 4: LEFT TRIANGLE (NUMBERS) ==========");
-        // Print triangle with numbers
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= i; j++) {
-                System.out.print(j + " ");
+        // Print triangle with numbers 
+        for (int i = 1; i <= N; i++) { // N = 5, Outer loop for rows : i = 1 to N , i++ (incrementing) print i stars in each row
+            for (int j = 1; j <= i; j++) { // Inner loop for columns : j = 1 to i , j++ (incrementing) print j in each column
+                System.out.print(j + " ");// Print j in each column
             }
             System.out.println();
         }
 
         System.out.println("\n========== PATTERN 5: PYRAMID (CENTERED) ==========");
         // Print centered pyramid
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= N - i; j++) {
-                System.out.print(" ");
+        for (int i = 1; i <= N; i++) {// N = 5, Outer loop for rows : i = 1 to N , i++ (incrementing) print i stars in each row
+            for (int j = 1; j <= N - i; j++) {// Inner loop for spaces : j = 1 to N - i , j++ (incrementing) print space in each column
+                System.out.print(" ");// Print space in each column
             }
-            for (int j = 1; j <= i; j++) {
-                System.out.print("* ");
+            for (int j = 1; j <= i; j++) {// Inner loop for stars : j = 1 to i , j++ (incrementing) print * in each column
+                System.out.print("* ");// Print * in each column
             }
-            System.out.println();
+            System.out.println();// Move to the next line after each row is printed     
         }
 
         System.out.println("\n========== PATTERN 6: INVERTED PYRAMID ==========");
