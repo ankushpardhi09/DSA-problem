@@ -439,76 +439,103 @@ j = 1
 #         password = input("Enter your password: ")# get the password from user input for the next attempt
 
 
-# Tower of Hanoi — clear, recursive implementation
-import time
-import sys
+# # Tower of Hanoi — clear, recursive implementation
+# import time
+# import sys
 
-class TowerOfHanoi:
-    """Recursive Tower of Hanoi solver with printable moves and optional delay."""
-    def __init__(self, n):
-        if n < 0:
-            raise ValueError("Number of disks must be non-negative")
-        self.n = n
-        # Towers stored as lists: larger integers = larger disks
-        self.towers = {'A': list(range(n, 0, -1)), 'B': [], 'C': []}
+# class TowerOfHanoi:
+#     """Recursive Tower of Hanoi solver with printable moves and optional delay."""
+#     def __init__(self, n):
+#         if n < 0:
+#             raise ValueError("Number of disks must be non-negative")
+#         self.n = n
+#         # Towers stored as lists: larger integers = larger disks
+#         self.towers = {'A': list(range(n, 0, -1)), 'B': [], 'C': []}
 
-    def _move(self, source, target):
-        disk = self.towers[source].pop()
-        self.towers[target].append(disk)
+#     def _move(self, source, target):
+#         disk = self.towers[source].pop()
+#         self.towers[target].append(disk)
 
-    def solve(self, delay=0.0, show_steps=True):
-        moves = []
+#     def solve(self, delay=0.0, show_steps=True):
+#         moves = []
 
-        def _recurse(m, src, dst, aux):
-            if m == 0:
-                return
-            _recurse(m - 1, src, aux, dst)
-            self._move(src, dst)
-            moves.append((src, dst))
-            if show_steps:
-                print(f"Move disk from {src} to {dst}; towers: {self.towers}")
-            if delay > 0:
-                time.sleep(delay)
-            _recurse(m - 1, aux, dst, src)
+#         def _recurse(m, src, dst, aux):
+#             if m == 0:
+#                 return
+#             _recurse(m - 1, src, aux, dst)
+#             self._move(src, dst)
+#             moves.append((src, dst))
+#             if show_steps:
+#                 print(f"Move disk from {src} to {dst}; towers: {self.towers}")
+#             if delay > 0:
+#                 time.sleep(delay)
+#             _recurse(m - 1, aux, dst, src)
 
-        if show_steps:
-            print(f"Starting: towers: {self.towers}")
-        _recurse(self.n, 'A', 'C', 'B')
-        if show_steps:
-            print(f"Solved: towers: {self.towers}")
-        return moves
+#         if show_steps:
+#             print(f"Starting: towers: {self.towers}")
+#         _recurse(self.n, 'A', 'C', 'B')
+#         if show_steps:
+#             print(f"Solved: towers: {self.towers}")
+#         return moves
 
 
-if __name__ == "__main__":
-    # Allow non-interactive usage:
-    #   python Problem.py 7        -> use 7 disks
-    #   python Problem.py pass 7   -> use 7 disks (matches user's "pass 7" request)
-    n = 3
-    args = sys.argv[1:]
-    if args:
-        if args[0].lower() == 'pass' and len(args) >= 2:
-            try:
-                n = int(args[1])
-            except ValueError:
-                print("Invalid number after 'pass'; using 3 disks.")
-        else:
-            try:
-                n = int(args[0])
-            except ValueError:
-                print("Invalid argument; using 3 disks.")
-    else:
-        try:
-            val = input("Enter number of disks (default 3): ") or "3"
-            # support entering 'pass 7' at prompt as well
-            parts = val.strip().split()
-            if parts and parts[0].lower() == 'pass' and len(parts) >= 2:
-                n = int(parts[1])
-            else:
-                n = int(parts[0])
-        except Exception:
-            print("Invalid input; using 3 disks.")
-            n = 3
+# if __name__ == "__main__":
+#     # Allow non-interactive usage:
+#     #   python Problem.py 7        -> use 7 disks
+#     #   python Problem.py pass 7   -> use 7 disks (matches user's "pass 7" request)
+#     n = 3
+#     args = sys.argv[1:]
+#     if args:
+#         if args[0].lower() == 'pass' and len(args) >= 2:
+#             try:
+#                 n = int(args[1])
+#             except ValueError:
+#                 print("Invalid number after 'pass'; using 3 disks.")
+#         else:
+#             try:
+#                 n = int(args[0])
+#             except ValueError:
+#                 print("Invalid argument; using 3 disks.")
+#     else:
+#         try:
+#             val = input("Enter number of disks (default 3): ") or "3"
+#             # support entering 'pass 7' at prompt as well
+#             parts = val.strip().split()
+#             if parts and parts[0].lower() == 'pass' and len(parts) >= 2:
+#                 n = int(parts[1])
+#             else:
+#                 n = int(parts[0])
+#         except Exception:
+#             print("Invalid input; using 3 disks.")
+#             n = 3
 
-    game = TowerOfHanoi(n)
-    game.solve(delay=0.0, show_steps=True)
+#     game = TowerOfHanoi(n)
+#     game.solve(delay=0.0, show_steps=True)
 
+
+# #Revere Each word in a String
+# s = "Hello World"
+# for i in s.split():# split the string into words and loop through each word
+#     print(i[::-1], end=' ')# reverse each word and print it followed by a space, ::-1 is used to reverse the string, end=' ' is used
+# # to print the reversed words on the same line with a space in between
+
+#check for valid parentheses using stack data structure
+# s = input("Enter a string of parentheses: ")# get a string input from the user containing parentheses to check for validity
+# stack = []# initialize an empty list to use as a stack for keeping track of opening parentheses
+# parentheses_map = {')': '(', '}': '{', ']': '['}# define a mapping of closing parentheses to their corresponding opening parentheses
+# is_valid = True# initialize a variable to keep track of whether the parentheses are valid or not
+# for char in s:# loop through each character in the input string
+#     if char in parentheses_map.values():# if the character is an opening parenthesis, push it onto the stack
+#         stack.append(char)# if the character is an opening parenthesis, push it onto the stack
+#     elif char in parentheses_map.keys():# if the character is a closing parenthesis, check if it matches the top of the stack
+#         if not stack or stack[-1] != parentheses_map[char]:# if the stack is empty or the top of the stack does not match the corresponding opening parenthesis, the parentheses are not valid
+#             is_valid = False# set is_valid to False since the parentheses are not valid
+#             break# break out of the loop since we have determined that the parentheses are not valid
+#         else:# if the closing parenthesis matches the top of the stack, pop the top of the stack
+#             stack.pop()# if the closing parenthesis matches the top of the stack, pop the top of the stack
+# if stack:# after processing all characters, if the stack is not empty, it means there are unmatched opening parentheses, so the parentheses are not valid
+#     is_valid = False# set is_valid to False since there are unmatched opening parentheses
+# if is_valid:# if the parentheses are valid, print a message indicating that they are valid
+#     print("The parentheses are valid.")# if the parentheses are valid, print a message indicating that they are valid
+# else:# if the parentheses are not valid, print a message indicating that they are not valid
+#     print("The parentheses are not valid.")# if the parentheses are not valid, print a message indicating that they are not valid
