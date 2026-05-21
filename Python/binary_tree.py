@@ -131,6 +131,16 @@ def searchNode(rootNode, nodeValue):# function to search for a node with the giv
     else:# If the value being searched for is greater than the current node's value, recursively search the right subtree.
         searchNode(rootNode.rightChild, nodeValue)
 
+#Height of a Binary Tree
+def heightOfBinaryTree(rootNode):# function to calculate the height of a binary tree
+    if rootNode is None:# If the current node is null, return -1 (the height of an empty tree is defined as -1).
+        return -1
+    else:# Otherwise, recursively calculate the height of the left and right subtrees and return the maximum of the two heights plus one (to account for the current node).
+        leftHeight = heightOfBinaryTree(rootNode.leftChild)# recursively calculate the height of the left subtree
+        rightHeight = heightOfBinaryTree(rootNode.rightChild)# recursively calculate the height of the right subtree
+        return max(leftHeight, rightHeight) + 1# return the maximum of the two heights plus one (to account for the current node)
+    
+
 
 new_BST = BSTNode(None)# Object
 insertNode(new_BST, 70)
@@ -154,7 +164,8 @@ postorderTraversal(new_BST)# Output: 10, 20, 40, 30, 60, 50, 80, 100, 90, 70
 print("Search for a value in the Binary Search Tree:")
 searchNode(new_BST, 70)# Output: Value found in the tree
 searchNode(new_BST, 25)# Output: Value Not found in the Tree
-
+print("Height of the Binary Search Tree:")
+print(heightOfBinaryTree(new_BST))# Output: 3
 
 
 
